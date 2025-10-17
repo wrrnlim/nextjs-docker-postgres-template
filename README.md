@@ -1,6 +1,6 @@
 # Next.js Docker Postgres Template
 
-Template for a Next.js + PostgreSQL + Prisma + Docker + shadcn stack, written in TypeScript.
+Template for a Next.js + PostgreSQL + Prisma + Docker stack, written in TypeScript.
 
 ## Prerequisites
 
