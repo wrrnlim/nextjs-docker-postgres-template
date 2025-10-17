@@ -19,6 +19,19 @@ Then, install the dependencies:
 npm i
 ```
 
+### Set Environment Variables
+
+Copy the `.env.example` into a `.env`:
+
+```bash
+cp .env.example .env
+```
+
+then change the `POSTGRES_PASSWORD`, and optionally the `POSTGRES_USER` and `POSTGRES_DB`. Be sure to update the `DATABASE_URL` with your changes as well. It should be `postgresql://<username>:<password>@localhost:5432/<app-name>. Replace with the actual values, not the variable name.
+
+>[!Warning]
+> Do not directly change the `.env.example` file. This file is not git ignored; passwords may be accidentally committed to GitHub.
+
 ### Docker
 
 Next, start the Docker services. For local development, we only need the `postgres` service running to serve our database. The app can run on our host machine, not within Docker.
@@ -43,7 +56,7 @@ Prisma is the ORM used, and allows us to interact with the database in a type-sa
 npx prisma generate
 ```
 
->[! Important]
+>[!Important]
 > This command has to be run every time the schema is changed.
 
 We can then push this schema into the database using (ensure `postgres` Docker service is up):
